@@ -126,7 +126,7 @@ btn_Modificar.addEventListener("click", function () {
 });
 
 btn_Eliminar.addEventListener("click", function () {
-    EliminarVehiculo(vehiculoSeleccionada.id);
+    EliminarVehiculo(vehiculoSeleccionado.id);
     selectForm.style.display = "none";
     selectTabla.style.display = "block";
 });
@@ -294,4 +294,9 @@ function ModificarVehiculo(vehiculo) {
     cargarTabla(arrayVehiculos);
 
     console.log(arrayVehiculos);
+}
+
+function EliminarVehiculo(vehiculoId){
+    arrayVehiculos = arrayVehiculos.filter(vehiculo => vehiculo.id != vehiculoId);
+    cargarTabla(arrayVehiculos);
 }
