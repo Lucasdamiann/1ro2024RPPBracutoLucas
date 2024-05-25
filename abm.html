@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 1px;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.432);
+        }
+
+        #cabecera_Tabla {
+            background-color: #16f7ff5e;
+            padding: 1px;
+            text-align: center;
+            border-style: double;
+            border-color: rgb(1, 24, 230);
+        }
+
+        th {
+            background-color: rgba(0, 4, 253, 0.137);
+            padding: 1px;
+            text-align: center;
+            border-style: double;
+            border-color: rgb(4, 0, 255);
+            text-align: center;
+
+        }
+
+        td {
+            background: rgba(34, 222, 255, 0.24);
+            border-style: double;
+            border-color: rgb(0, 0, 0);
+            text-align: center;
+        }
+
+        #tabla_Vehiculos {
+            border-style: none;
+            width: min-content;
+            padding-right: 50px;
+        }
+
+        #form_Vehiculos {
+            width: 50%;
+            height: 100%;
+            padding-right: 50px;
+            background-color: #16f7ff5e;
+            padding: 1px;
+            text-align: left;
+            border-style: double;
+            border-color: rgb(1, 24, 230);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tabla_Vehiculos" style="display: block;">
+        <h1>Form Listado</h1>
+        <div id="controles_Tabla">
+            <div id="filtro_Select">
+                <label for="opciones_FiltrarPor">Filtrar Por:</label>
+                <select id="opciones_FiltrarPor">
+                    <option value="todos">Todos</option>
+                    <option value="auto">Auto</option>
+                    <option value="camion">Camion</option>
+                </select><br>
+            </div>
+            <div id="calcular_Tabla">
+                <label for="txt_Calcular">Vel. Maxima Promedio:</label>
+                <input type="text" id="txt_Calcular">
+                <input id="btn_Calcular" type="button" value="Calcular">
+            </div>
+            <div id="checkbox_Tabla">
+                <input type="checkbox" id="checkbox_Id" checked>
+                <label for="checkbox_Id">ID</label>
+
+                <input type="checkbox" id="checkbox_Modelo" checked>
+                <label for="checkbox_Modelo">Modelo</label>
+
+                <input type="checkbox" id="checkbox_AnoFabricacion" checked>
+                <label for="checkbox_AnoFabricacion">Ano Fabricacion</label>
+
+                <input type="checkbox" id="checkbox_VelMaxima" checked>
+                <label for="checkbox_VelMaxima">Vel. Maxima</label>
+
+                <input type="checkbox" id="checkbox_CantidadPuertas" checked>
+                <label for="checkbox_CantidadPuertas">Cantidad Puertas</label>
+
+                <input type="checkbox" id="checkbox_Asientos" checked>
+                <label for="checkbox_Asientos">Asientos</label>
+
+                <input type="checkbox" id="checkbox_Carga" checked>
+                <label for="checkbox_Carga">Carga</label>
+
+                <input type="checkbox" id="checkbox_Autonomia" checked>
+                <label for="checkbox_Autonomia">Autonomia</label>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr id="cabecera_Tabla">
+                    <th>Id</th>
+                    <th>Modelo</th>
+                    <th>Ano Fabricacion</th>
+                    <th>Vel. Maxima</th>
+                    <th>Cantidad Puertas</th>
+                    <th>Asientos</th>
+                    <th>Carga</th>
+                    <th>Autonomia</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpo_Tabla"></tbody>
+        </table>
+        <input id="btn_Agregar" type="button" value="Agregar">
+
+        </select>
+    </div>
+    <br>
+    <div id="form_Vehiculos" style="display: none;">
+        <h1>Formulario ABM</label></h1>
+        <form id="form_Extra">
+            <div>
+                <label>Id:<input type="text" id="input_Id" readonly></label><br>
+            </div>
+            <div>
+                <label>Modelo:<input type="text" id="input_Modelo"></label><br>
+            </div>
+            <div>
+                <label>Ano Fabricacion:<input type="text" id="input_AnoFabricacion"></label><br>
+            </div>
+            <div>
+                <label>Vel. Maxima:<input type="text" id="input_VelMaxima"></label><br>
+            </div>
+            <div>
+                <label for="seleccion_Tipo">Tipo:</label>
+                <select id="seleccion_Tipo">
+                    <option value="auto" id="valor_Auto">Auto</option>
+                    <option value="camion" id="valor_Camion">Camion</option>
+                </select>
+            </div>
+            <div id="div_Lbl_CantidadPuertas" style="display: none;">
+                <label>Cant. Puertas:<input type="text" id="input_CantidadPuertas"></label>
+            </div>
+            <div id="div_Lbl_Asientos" style="display: none;">
+                <label>Asientos:<input type="text" id="input_Asientos"></label>
+            </div>
+            <div id="div_Lbl_Carga" style="display: none;">
+                <label>Carga:<input type="text" id="input_Carga"></label>
+            </div>
+            <div id="div_Lbl_Autonomia" style="display: none;">
+                <label>Autonomia:<input type="text" id="input_Autonomia"></label>
+            </div>
+        </form>
+        <div id="div_Btns_Accion">
+            <input id="btn_Crear" type="button" value="Crear" class="btn">
+            <input id="btn_Modificar" type="button" value="Modificar" class="btn">
+            <input id="btn_Eliminar" type="button" value="Eliminar" class="btn">
+            <input id="btn_Cancelar" type="button" value="Cancelar" class="btn">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
